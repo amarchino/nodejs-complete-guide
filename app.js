@@ -12,17 +12,17 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/add-product', (req, res) => {
+app.get('/add-product', (req, res) => {
   console.log('In another middleware');
   res.send('<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>');
 });
 
-app.use('/product', (req, res) => {
+app.post('/product', (req, res) => {
   console.log(req.body);
   res.redirect('/add-product');
 });
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   console.log('In another middleware');
   res.send('<h1>Hello from Express!</h1>');
 });
