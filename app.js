@@ -10,11 +10,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use((req, res, next) => {
-  console.log('This always runs!');
-  next();
-});
-
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
