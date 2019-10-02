@@ -9,7 +9,10 @@ const shopRoutes = require('./routes/shop');
 const app = express();
 
 app.engine('hbs', expressHandlebar({
-  defaultLayout: null
+  defaultLayout: null,
+  layoutsDir: 'views/layouts/',
+  defaultLayout: 'main-layout',
+  extname: 'hbs'
 }));
 // app.set('view engine', 'pug');
 app.set('view engine', 'hbs');
