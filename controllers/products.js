@@ -6,4 +6,4 @@ exports.postAddProduct = (req, res) => {
   product.save();
   res.redirect('/');
 };
-exports.getProducts = (req, res) => res.render('shop', {prods: Product.fetchAll(), pageTitle: 'Shop', path: '/'});
+exports.getProducts = (req, res) => Product.fetchAll(prods => res.render('shop', {prods, pageTitle: 'Shop', path: '/'}));

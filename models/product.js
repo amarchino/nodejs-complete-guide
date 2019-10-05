@@ -18,12 +18,12 @@ module.exports = class Product {
     });
   }
 
-  static fetchAll() {
+  static fetchAll(cb) {
     fs.readFile(p, (err, fileContent) => {
       if(err) {
-        return [];
+        return cb([]);
       }
-      return JSON.parse(fileContent);
+      return cb(JSON.parse(fileContent));
     });
   }
 };
