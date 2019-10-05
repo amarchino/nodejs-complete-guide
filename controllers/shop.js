@@ -4,3 +4,4 @@ exports.getProducts = (req, res) => Product.fetchAll(prods => res.render('shop/p
 exports.getIndex = (req, res) => Product.fetchAll(prods => res.render('shop/index', {prods, pageTitle: 'Shop', path: '/'}));
 exports.getCart = (req, res) => res.render('shop/cart', {pageTitle: 'Cart', path: '/cart'});
 exports.getCheckout = (req, res) => res.render('shop/checkout', {pageTitle: 'Checkout', path: '/checkout'});
+exports.getOrders = (req, res) => res.render('shop/orders', {pageTitle: 'Orders', path: '/orders'});
